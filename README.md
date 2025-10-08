@@ -103,8 +103,6 @@ Feature: Successful purchase process on SauceDemo
 ```
 LoginRunner
 PurchaseRunner
-
----
 ```
 ## 📊 Reporte de Serenity
 Después de cada ejecución se genera el reporte en la ruta:
