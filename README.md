@@ -109,4 +109,3 @@ Feature: Successful purchase process on SauceDemo
 Después de cada ejecución se genera el reporte en la ruta:
 ```
 target/site/serenity/index.html
-```
