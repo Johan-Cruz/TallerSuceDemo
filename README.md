@@ -1,53 +1,51 @@
 # TallerSauceDemo 🧪
 
-## 📖 Project Definition
-This project implements a functional test automation framework based on **Serenity BDD** with the **Screenplay pattern**.  
-Its purpose is to automate scenarios of the [SauceDemo](https://www.saucedemo.com/) page, validating the **login** and **purchase** flows.
+## 📖 Proyecto
+Este proyecto implementa un marco de automatización de pruebas funcionales basado en **Serenity BDD** con el patrón **Screenplay**.
+Su propósito es automatizar los escenarios de la página [SauceDemo](https://www.saucedemo.com/), validando las historias de usuario (escenarios) **Login** y **Purcharse**.
 
-The **Screenplay** pattern organizes the code into layers, allowing better maintainability, readability, and reusability of components.
-
+El patrón **Screenplay** organiza el código en capas, esta estructurado de la siguiente manera.
 ---
 
-## 🗂️ Project Structure (Screenplay)
+## 🗂️ Estructura del proyecto (Screenplay)
 ```
 src
 ├── main
 │   └── java/com/challenge
-│       ├── exceptions        # Custom exceptions
-│       ├── interactions      # Custom interactions (e.g., waits, iframes)
-│       ├── models            # Data models (UserData, etc.)
-│       ├── questions         # Validations and queries to the UI state
-│       ├── tasks             # High-level tasks (Login, Purchase, etc.)
-│       ├── userinterfaces    # PageObjects (UI element mapping)
-│       └── utilities         # Utilities (CSV reader, helpers)
+│       ├── exceptions        
+│       ├── interactions      
+│       ├── models            
+│       ├── questions         
+│       ├── tasks             
+│       ├── userinterfaces    
+│       └── utilities         
 └── test
     ├── java/com/challenge
-    │   ├── hooks             # Scenario configuration (SetTheStage)
-    │   ├── listeners         # TestListener for console output
-    │   ├── runners           # Cucumber Runners (Login, Purchase)
-    │   └── stepdefinitions   # Step definitions (glue code)
+    │   ├── hooks             
+    │   ├── listeners         
+    │   ├── runners           
+    │   └── stepdefinitions   
     └── resources
-        ├── features          # .feature files in Gherkin
+        ├── features          
         │   ├── login
         │   │   └── login.feature
         │   └── purchase
         │       └── purchase.feature
-        ├── serenity.conf     # Serenity configuration
-        ├── logback-test.xml  # Logs configuration
-        └── testdata          # Test data (CSV, JSON, etc.)
+        ├── serenity.conf     
+        ├── logback-test.xml  
+        └── testdata          
 ```
 
 ---
 
-## ⚙️ Technologies
-- **Language**: Java (JDK 11 or higher)
+## ⚙️ Herramientas
+- **Languaje**: Java (JDK 11 or higher)
 - **Test Framework**: [Serenity BDD](https://serenity-bdd.github.io)
-- **Design Pattern**: Screenplay
-- **BDD Framework**: [Cucumber](https://cucumber.io) with **Gherkin (English)**
-- **Build Tools**: 
+- **Patron**: Screenplay
+- **BDD Framework**: [Cucumber](https://cucumber.io) **Gherkin (English)**
+- **Compilación**: 
   - Gradle (recommended)
-  - Maven (optional alternative)
-- **Browser**: Chrome (configured **incognito** and **maximized**)
+- **Navegador**: Chrome (Configurado **incognito** y **maximized**)
 
 ---
 
@@ -62,34 +60,9 @@ testImplementation "io.cucumber:cucumber-java:7.14.0"
 testImplementation "io.cucumber:cucumber-junit:7.14.0"
 testImplementation "junit:junit:4.13.2"
 ```
-
-### Maven (`pom.xml`)
-```xml
-<dependency>
-  <groupId>net.serenity-bdd</groupId>
-  <artifactId>serenity-core</artifactId>
-  <version>3.9.8</version>
-</dependency>
-<dependency>
-  <groupId>net.serenity-bdd</groupId>
-  <artifactId>serenity-screenplay</artifactId>
-  <version>3.9.8</version>
-</dependency>
-<dependency>
-  <groupId>net.serenity-bdd</groupId>
-  <artifactId>serenity-cucumber</artifactId>
-  <version>3.9.8</version>
-</dependency>
-<dependency>
-  <groupId>io.cucumber</groupId>
-  <artifactId>cucumber-java</artifactId>
-  <version>7.14.0</version>
-</dependency>
-```
-
 ---
 
-## 🌐 Gherkin Features (English)
+## 🌐 Escenarios Features (Ingles como lo pedía el taller)
 ### Feature 1: Login
 ```gherkin
 Feature: User login on SauceDemo
@@ -120,21 +93,20 @@ Feature: Successful purchase process on SauceDemo
 
 ---
 
-## 🚀 Execution
-### With Gradle
+## 🚀 Ejecución
+### Con Gradle
 ```bash
 ./gradlew clean test
 ```
 
-### With Maven
-```bash
-mvn clean verify
-```
+### Directamente desde los Runner
+```LoginRunner
+```PurchaseRunner
 
 ---
 
-## 📊 Reports
-After running the tests, Serenity generates the report in:
+## 📊 Reporte de Serenity
+Después de cada ejecución se genera el reporte en la ruta:
 ```
 target/site/serenity/index.html
 ```
