@@ -44,7 +44,7 @@ src
 - **Patron**: Screenplay
 - **BDD Framework**: [Cucumber](https://cucumber.io) **Gherkin (English)**
 - **Compilación**: 
-  - Gradle (recommended)
+  - Gradle
 - **Navegador**: Chrome (Configurado **incognito** y **maximized**)
 
 ---
@@ -101,8 +101,8 @@ Feature: Successful purchase process on SauceDemo
 
 ### Directamente desde los Runner
 ```
-LoginRunner
-PurchaseRunner
+- LoginRunner
+- PurchaseRunner
 ```
 ## 📊 Reporte de Serenity
 Después de cada ejecución se genera el reporte en la ruta:
