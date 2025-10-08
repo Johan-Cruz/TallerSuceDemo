@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Successful purchase process on SauceDemo" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-10-08T01:13:51.043Z" hostname="SAMUEL" time="42.107">
+  <properties/>
+  <testcase name="Complete a successful purchase of two products" classname="Successful purchase process on SauceDemo" time="42.107"/>
+  <system-out><![CDATA[
+@purchase
+Scenario: Complete a successful purchase of two products                        ?[90m# src/test/resources/features/purchase/purchase.feature:4?[0m
+  ?[32mGiven ?[0m?[32mthe user has logged in successfully?[0m                                     ?[90m# com.challenge.stepdefinitions.PurchaseStepDefinition.loggedIn()?[0m
+  ?[32mWhen ?[0m?[32mthe user adds the products to the cart?[0m                                   ?[90m# com.challenge.stepdefinitions.PurchaseStepDefinition.theUserAddsTheProductsToTheCart()?[0m
+  ?[32mAnd ?[0m?[32mthe user completes the checkout process?[0m                                   ?[90m# com.challenge.stepdefinitions.PurchaseStepDefinition.completesCheckout()?[0m
+  ?[32mThen ?[0m?[32mthe confirmation message ?[0m?[32m?[1m"Thank you for your order!"?[0m?[32m should be displayed?[0m ?[90m# com.challenge.stepdefinitions.PurchaseStepDefinition.confirmationMessage(java.lang.String)?[0m
+]]></system-out>
+  <system-err><![CDATA[oct. 07, 2025 8:14:06 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 140
+oct. 07, 2025 8:14:06 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 140.0.7339.210. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+</testsuite>

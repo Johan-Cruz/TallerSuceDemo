@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '3.9.8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    serenityVersion = '3.9.8'
+    cucumberVersion = '7.14.0'
+    junitVersion = '4.13.2'
+    seleniumVersion = '4.21.0'
+}
+
+dependencies {
+    implementation "net.serenity-bdd:serenity-core:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-junit:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:$serenityVersion"
+
+    testImplementation "net.serenity-bdd:serenity-cucumber:$serenityVersion"
+    testImplementation "io.cucumber:cucumber-java:$cucumberVersion"
+    testImplementation "io.cucumber:cucumber-junit:$cucumberVersion"
+    testImplementation "junit:junit:$junitVersion"
+
+    implementation "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
+}
+
+test {
+    useJUnit()
+
+    // Pretty ASCII console markers
+    testLogging.showStandardStreams = true
+    afterTest { descriptor, result ->
+        println "\n-------------------------------"
+        println "------ TEST ${result.resultType} ------"
+        println "------ ${descriptor.displayName} ------"
+        println "-------------------------------\n"
+    }
+
+    // Clean Serenity reports before each run
+    doFirst {
+        delete("target/site/serenity")
+        delete("target/serenity")
+    }
+}
