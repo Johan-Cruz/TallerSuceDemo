@@ -100,8 +100,9 @@ Feature: Successful purchase process on SauceDemo
 ```
 
 ### Directamente desde los Runner
-```LoginRunner
-```PurchaseRunner
+```
+LoginRunner
+PurchaseRunner
 
 ---
 
